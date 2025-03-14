@@ -14,7 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: autcharle/capstone-kimai/Nhom_01/02_Source/frontend/kimai
+          repository: autcharle/capstone-kimai
+      - name: Navigate to frontend subdirectory
+        run: cd Nhom_01/02_Source/frontend/kimai
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -27,7 +29,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: autcharle/capstone-kimai/Nhom_01/02_Source/backend/timesheet-management
+          repository: autcharle/capstone-kimai
+      - name: Navigate to frontend subdirectory
+        run: cd Nhom_01/02_Source/backend/timesheet-management
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
