@@ -1,0 +1,36 @@
+name: Build Frontend and Backend
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: autcharle/capstone_kimai/Nhom_01/02_Source/frontend/kimai
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22" # Set the Node.js version to use for the build
+      - run: npm install
+      - run: npm run build
+
+  build-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: autcharle/capstone_kimai/Nhom_01/02_Source/backend/timesheet-management
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22" # Set the Node.js version to use for the build
+      - run: yarn install
+      - run: yarn build
