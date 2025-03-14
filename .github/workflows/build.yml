@@ -1,4 +1,4 @@
-name: Build Frontend and Backend
+name: Build
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - develop
 
 jobs:
-  build-frontend:
+  frontend-kimai:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
           npm install
           npm run build
 
-  build-backend:
+  backend-timesheet:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
